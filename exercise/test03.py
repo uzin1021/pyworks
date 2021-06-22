@@ -47,9 +47,20 @@ for i in range(100):
 
 
 #5
-    
+print("\n")
+print("================5번============")    
 A = [70,60,55,75,95,90,80,80,85,100]
 total = 0
 for score in A:
-    total += 
+    total += score
+average = total/10
+print(average)
+'''
+#6번
+numbers = [1,2,3,4,5]
+result = []
+for n in number:
+    if n % 2 == 1:
+        result.append(n*2)
  
+'''
