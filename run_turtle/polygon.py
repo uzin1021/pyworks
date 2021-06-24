@@ -24,3 +24,4 @@ t.down() # 선 내리
 polygon2(4, 90)
 polygon2(5,120)
 
+t.mainloop()

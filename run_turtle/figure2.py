@@ -26,3 +26,5 @@ for i in range(n):
     t.color("yellow")
     t.left(360/n)
     t.circle(60)
+
+t.mainloop()

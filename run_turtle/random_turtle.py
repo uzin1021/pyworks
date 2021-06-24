@@ -12,3 +12,4 @@ for x in range(500): # 거북이가 500번 움직임
     angle = r.randint(1, 360)
     t.setheading(angle) # 거북이의 방향
     t.forward(10)
+t.mainloop()
