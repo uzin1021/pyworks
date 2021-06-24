@@ -5,6 +5,8 @@ score = [70,80,50,50,90,20]
 max = score[0]
 len(score)
 n = len(score)
+score.sort()
+print(score) 
 
 for i in range(1, n):
     if max < score[i]:
@@ -18,7 +20,8 @@ for i in range(0, n):
     for j in range(0, n-1):
         if score[j] > score[j+1]:
             score[j], score[j+1] = score[j+1], score[j]
-        '''
+    print(i, end = " ")
+    '''
             # 1행
             70 50 60 80 20 90
             2행
@@ -29,7 +32,7 @@ for i in range(0, n):
             50 20 60 70 80 90
             5행
             20 50 60 70 80 90
-        '''    
+    '''    
 '''
 for i in score:
     print(i, end = " ")

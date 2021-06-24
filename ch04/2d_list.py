@@ -16,7 +16,7 @@ print('li[2][1] =',li[2][1])
 print("리스트의 크기(행) =", len(li))
 '''
 for x,y in li:
-    print(x,y)
+    print(x,y) #파이썬 예시
 '''
 
 for i in range(len(li)):
@@ -24,3 +24,4 @@ for i in range(len(li)):
     for j in range(len(li[i])):
         print(li[i][j], end = " ")
     print()
+#일반적인 코드 예시 
