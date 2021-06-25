@@ -9,6 +9,6 @@ while True:
         print("너무 커요")
     elif com > guess:
         print("너무 작아요")
-    elif com == guess:
+    else:
         print("정답!")
         break

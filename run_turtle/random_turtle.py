@@ -2,7 +2,7 @@
 import turtle as t
 import random as r
 
-t.shape("turtle")
+t.shape("circle")
 t.speed(10)
 t.pensize(2)
 t.bgcolor("pink")
