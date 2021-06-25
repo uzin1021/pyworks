@@ -13,21 +13,46 @@ def turn_left(): #왼쪽
 def turn_down(): #아래쪽
     t.setheading(270)
 
+def start():
+    global playing
+    if playing == False:
+        playing = True
+        t.color()
+        play()
+def message(m1,m2):
+    t.clear()
+    t.goto(0, 100)
+    t.write(m1, False, "center", ("",20))
+    t.goto(0, -100)
+    t.write(m2, False, "center", ("",15))
+    t.home()
 
 def play():
+    global score
+    global playing
+
     t.forward(10)
-    te.forward(9)
-    # 적거북이가 주인공거북이 쫓아옴
-    ang = te.towards(t.pos())
+    #적거북이의 속도는 점수가 올라가면 1씩 증가함.
+    ang = te.towards((t.pos()))
     te.setheading(ang)
-    # 주인공 거북이가 먹이에 닿으면 먹이 랜덤하게 이동
+    speed = score + 5
+
+    te.forward(speed)
+    #주인공이 먹이를 먹으면 점수가 1 올라감.
     if t.distance(tf) <12:
-        x = random.randint(-230 , 230)
+        score += 1
+        t.write(score)
+        x = random.randint(-230, 230)
         y = random.randint(-230, 230)
         tf.goto(x,y)
 
-    if t.distance(te) >= 12: #12보다 작으면 잡혀서 게임 종료
-        t.ontimer(play, 100) # 0.1초 간격으로 작동
+    if playing:
+        t.ontimer(play, 100)
+
+# 점수 변수와 플레이 스위치(bool) 변수 선언
+score = 0
+playing = False
+
 
 #main 메인영역
 t.shape("turtle")
@@ -60,9 +85,9 @@ t.onkeypress(turn_right, "Right")
 t.onkeypress(turn_up, "Up")
 t.onkeypress(turn_left,  "Left")
 t.onkeypress(turn_down, "Down")
-# t.onkeypress(clear, "Escape")
+t.onkeypress(start, "space")
 
 t.listen()
-play()
+message("Turtle Run", "[Space]")
 
 t.mainloop()
