@@ -17,7 +17,7 @@ def start():
     global playing
     if playing == False:
         playing = True
-        t.color()
+        t.clear()
         play()
 def message(m1,m2):
     t.clear()
@@ -32,19 +32,28 @@ def play():
     global playing
 
     t.forward(10)
-    #적거북이의 속도는 점수가 올라가면 1씩 증가함.
-    ang = te.towards((t.pos()))
-    te.setheading(ang)
-    speed = score + 5
 
+    #적거북이의 속도는 점수가 올라가면 1씩 증가함.
+    if random.randint(1, 5) == 3:  # 3을 뽑을 확률이 적음 , 20퍼의 확률로 따라옴
+        ang = te.towards(t.pos())
+        te.setheading(ang)
+    speed = score + 4
+    if speed >15:
+        spee = 15
     te.forward(speed)
     #주인공이 먹이를 먹으면 점수가 1 올라감.
-    if t.distance(tf) <12:
+    if t.distance(tf) < 12:
         score += 1
         t.write(score)
         x = random.randint(-230, 230)
         y = random.randint(-230, 230)
         tf.goto(x,y)
+    #주인공 거북이가 적에게 잡히면 게임 종료
+    if t.distance(te) <12:
+        text = "Score : " +str(score)
+        message("Game over: " , text)
+        playing = False
+        score = 0
 
     if playing:
         t.ontimer(play, 100)
