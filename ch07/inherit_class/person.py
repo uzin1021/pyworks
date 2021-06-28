@@ -6,7 +6,7 @@ class Person:
         self.name = name
         self.age = age
 
-    def Employee(Person):
+class Employee(Person):
         pass
 
 if __name__ == "__main__":
@@ -15,3 +15,6 @@ if __name__ == "__main__":
 
     e1 = Person("이이", 32)
     print(e1.name,e1.age)
+
+    e2 = Person("이황", 33)
+    print(e2.name,e2.age)

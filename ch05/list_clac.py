@@ -6,8 +6,8 @@ def avg(a):
     c = len(a)
     for i in a:
         sum += i
-    return (sum = c/len())
+    return int(sum/len(a))
 
 
-avg([50,70,90,80,60])
+avg = avg([50,70,90,80,60])
 print("평균 점수: ",avg)
