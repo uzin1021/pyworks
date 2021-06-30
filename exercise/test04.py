@@ -4,7 +4,7 @@ def is_odd(number):
         return True
     else:
         return False
-
+'''
 print(is_odd(6))
 
 # 2 가변 매개 변수
@@ -29,5 +29,31 @@ print("you""need""python")
 print("you"+"need"+"python")
 print("you","need","python")
 print("".join(["you","need","python"]))
-
+'''
+'''
 # 5
+f1 = open("test.txt", 'w')
+f1.write("Life is too short\n")
+f1.close()
+f2 = open("test.txt", 'r')
+print(f2.read())
+f2.close()
+
+# 6
+user_input = input("저장할 내용을 입력하세요: ")
+f = open('test.txt', 'a')
+f.write(user_input)
+f.write('\n')
+f.close()
+'''
+# 7
+f = open('test.txt','r')
+body = f.read()
+f.close()
+
+body = body.replace("java","python")
+
+f = open('test.txt','w')
+f.write(body)
+f.close()
+
