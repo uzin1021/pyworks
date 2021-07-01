@@ -20,7 +20,7 @@ for x,y in li:
 '''
 
 for i in range(len(li)):
-    print(len(li[i]))
+    # print(len(li[i]))
     for j in range(len(li[i])):
         print(li[i][j], end = " ")
     print()
