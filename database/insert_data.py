@@ -7,9 +7,8 @@ def insert_data():
     cur = conn.cursor()
 
     # 자료를 추가하는 - SQL
-    cur.execute("insert into member values ('최영',50)")
-    cur.execute("insert into member values ('이황',50)")
-    cur.execute("insert into member values ('이순신', 60)") # 이 줄은 지우고 다시 작성,
+    cur.execute("insert into member values (104, '최영',66)")
+    cur.execute("insert into member values (105, '이황',77)") # 이 줄은 지우고 다시 작성,
                                                            # 똑같이 입력할시 중복데이터 생성됨
 
     conn.commit()

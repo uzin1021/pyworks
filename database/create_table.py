@@ -11,6 +11,7 @@ def create_table():
     # 테이블 생성 - sql언어 DDL
     sql = """
         create table member(
+            mem_num int primary key, 
             name char(20),
             age int
         )

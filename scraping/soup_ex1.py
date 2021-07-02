@@ -10,17 +10,21 @@ html_str="""
         <li>로봇</li>
     </ul>
     <ul class ="lang">
-        <li>수학</li>
-        <li>국어</li>
         <li>영어</li>
+        <li>중국어</li>
+        <li>과학</li>
     </ul>
 </body>
 </html>
 """
 
-soup = BeautifulSoup(html_str,'html.parser')
-# print(soup)
-ul = soup.find('ul') # find() 는 맨 처음 나오는 태그만 검색
+contents = BeautifulSoup(html_str, "html.parser")
+ul = contents.find('ul', {'class':'lang'})
+
 # print(ul)
-# print(soup.find('li'))
-print(ul.text) # ul에서 추출 ,태그를 빼고 검색
+# li = ul.find('li')
+# print(li) # 맨위 리스트만 검색
+# 중국어 검색 방법1
+lis = ul.find_all('li')
+print(lis)
+print(lis[1].text)

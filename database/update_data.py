@@ -5,8 +5,8 @@ from libs.db.dbconn import getconn
 def update_data():
     conn = getconn()
     cur = conn.cursor()
-    # sql = "update member set name='성춘향' where name = '이순신'"
-    sql = "update member set age=55 where name= '최영'"
+    sql = "update member set name='성춘향' mem_num = 105"
+    # sql = "update member set age=55 where name= '최영'"
     cur.execute(sql)
 
     conn.commit()

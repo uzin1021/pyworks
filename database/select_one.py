@@ -6,7 +6,7 @@ def selcet_one():
     cur = conn.cursor()
 
     # 1명 검색 SQL
-    sql = "select * from member where name ='이황'"
+    sql = "select * from member where mem_num = 104" # primary key로 거의 고정
     cur.execute(sql)
     print("이황 검색")
     # rs = cur.fetchmany(num)

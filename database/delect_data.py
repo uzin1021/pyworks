@@ -5,7 +5,7 @@ from libs.db.dbconn import getconn
 def delect_data():
     conn = getconn()
     cur = conn.cursor()
-    sql = "delete from member where name = '최영'"
+    sql = " delete from member where mem_num = 104 "
     cur.execute(sql)
 
     conn.commit()
